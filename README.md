@@ -35,45 +35,19 @@ This payment system is built using Go and designed to manage user wallets, payme
 └── Dockerfile         # Docker container setup
 ```
 
-## Setup Instructions
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/Abdulaxad7/payment-system.git
-   cd payment-system
-   ```
-
-2. **Install dependencies**:
-   Ensure Go and Docker are installed. Then, run:
-   ```bash
-   go mod download
-   ```
-
-3. **Run the application**:
-   You can run the project locally or via Docker:
-   ```bash
-   go run cmd/server/main.go
-   ```
-   Or build and run it using Docker:
-   ```bash
-   docker build -t payment-system .
-   docker run -p 8080:8080 payment-system
-   ```
-
 ## API Endpoints
 
 | Method | Endpoint               | Description                     |
 |--------|------------------------|---------------------------------|
-| POST   | `/login`                | Authenticate user               |
-| GET    | `/wallets/{id}`         | Get wallet details              |
-| POST   | `/payments`             | Process a payment               |
-| POST   | `/invoices`             | Generate an invoice             |
-| GET    | `/reports/{user_id}`    | Generate user report            |
+|POST    |`/signup `              |Create user                      |
+|POST    |`/login/`               |Authenticate user                |
+|POST    |`/pay`                  |Process a payment                |
+|GET     |`/pay/message`          |Verify a payment                 |
+|GET     |`/wallet`               |Get wallet details               |
+|POST    |`/wallet/create`        |Create wallet                    |
+|POST    |`/wallet/create/card`   |Add new card                     |
+|DELETE  |`/wallet/delete`        |Delete wallet                    |
+|DELETE  |`/wallet/delete/card`   |Delete card                      |
+|POST    |`/verify`               |Verify user                      |
 
-## Future Improvements
-- Add support for external payment gateways.
-- Implement multi-currency support.
-- Add frontend integration.
 
-## License
-This project is licensed under the MIT License.
