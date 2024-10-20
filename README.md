@@ -7,7 +7,6 @@ This payment system is built using Go and designed to manage user wallets, payme
 ## Features
 - **User Authentication**: Secure login and token-based authentication.
 - **Wallet Management**: Multiple cards per wallet, transaction history.
-- **Invoice Generation**: Track payments and generate invoices.
 - **Notifications**: Real-time updates for payment statuses.
 - **Reports**: Generate user payment and wallet reports.
 
@@ -22,13 +21,12 @@ This payment system is built using Go and designed to manage user wallets, payme
 ├── cmd/server         # Application entry point
 ├── internal           # Business logic and services
 │   ├── auth           # Authentication services
+│       └── middleware     # Custom middleware
 │   ├── payment        # Payment processing services
-│   ├── wallet         # Wallet management services
-│   └── invoice        # Invoice services
+│   └── wallet         # Wallet management services
+│   └── mails          # Email verification services 
 ├── pkg                # Helper packages
-│   ├── config         # Configuration management
-│   ├── database       # Database connection
-│   └── middleware     # Custom middleware
+│   └── database       # Database connection
 ├── api/v1             # API routes and handlers
 ├── test               # Unit tests
 ├── go.mod             # Module dependencies
